@@ -1,1 +1,2 @@
 # Online-Store-DataBase
+The primary objective is to design a relational database that effectively manages products, customers, orders, and inventory. The system incorporates data integrity constraints, advanced SQL queries, and features for inventory control, sales analysis, and customer experience personalization.  The Online Store Database Management System serves as the backbone of the online store, ensuring smooth operations and delivering a delightful shopping experience for customers.
