@@ -1,0 +1,39 @@
+CREATE TABLE products (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  stock_quantity INT NOT NULL,
+  category VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE customers (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE orders (
+  id INT NOT NULL AUTO_INCREMENT,
+  customer_id INT NOT NULL,
+  order_date DATETIME NOT NULL,
+  order_number INT NOT NULL,
+  products VARCHAR(255) NOT NULL,
+  quantity INT NOT NULL,
+  total_price DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (customer_id) REFERENCES customers (id)
+);
+
+CREATE TABLE inventory (
+  product_id INT NOT NULL,
+  quantity_in_stock INT NOT NULL,
+  reorder_level INT NOT NULL,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (product_id) REFERENCES products (id)
+);
